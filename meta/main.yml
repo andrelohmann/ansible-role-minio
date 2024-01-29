@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: __ROLE_NAME__
+  role_name: minio
   author: andrelohmann
-  description: describe the role purpose
+  description: Install minio from binary packages
   company: CloudCourse GmbH
 
   license: MIT
@@ -16,8 +16,7 @@ galaxy_info:
     - focal
 
   galaxy_tags:
-  - role
-  - tags
+  - minio
 
 dependencies: []
 ...
