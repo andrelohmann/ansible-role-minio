@@ -1,0 +1,27 @@
+---
+- name: Converge
+  hosts: all
+
+  vars:
+    minio_admin_user: minioadmin
+    minio_admin_pass: minioadmin
+    minio_test_accesskey: 43D9EPVMO0QGJ38GXTDO
+    minio_test_secretkey: NUf8Ucvs0A84m8Ml8P4ypvMdGYigStjtJdmHeSqL
+
+    minio_config:
+    - key: MINIO_VOLUMES
+      value: '"/opt/minio"'
+    - key: MINIO_ROOT_USER
+      value: "{{ minio_admin_user }}"
+    - key: MINIO_ROOT_PASSWORD
+      value: "{{ minio_admin_pass }}"
+    - key: MINIO_OPTS
+      value: '"--console-address :9001"'
+    - key: MINIO_SERVER_URL
+      value: '"http://localhost:9000"'
+
+  tasks:
+  - name: "Include andrelohmann.minio"
+    include_role:
+      name: "andrelohmann.minio"
+...

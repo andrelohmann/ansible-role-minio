@@ -1,0 +1,11 @@
+---
+
+- name: Create minio volumes
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    recurse: true
+    owner: minio-user
+    group: minio-user
+
+...

@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: minio
+  author: andrelohmann
+  description: Install minio from binary packages
+  company: CloudCourse GmbH
+
+  license: MIT
+
+  min_ansible_version: "2.11"
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - jammy
+    - focal
+
+  galaxy_tags:
+  - minio
+
+dependencies: []
+...

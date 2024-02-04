@@ -1,0 +1,8 @@
+---
+
+roles:
+- andrelohmann.minio_cli
+
+collections: []
+
+...
