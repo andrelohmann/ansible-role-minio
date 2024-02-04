@@ -5,6 +5,12 @@
   hosts: all
   gather_facts: true
 
+  vars:
+    minio_admin_user: minioadmin
+    minio_admin_pass: minioadmin
+    minio_test_accesskey: 43D9EPVMO0QGJ38GXTDO
+    minio_test_secretkey: NUf8Ucvs0A84m8Ml8P4ypvMdGYigStjtJdmHeSqL
+
   roles:
   - andrelohmann.minio_cli
 
@@ -14,8 +20,6 @@
     ansible.builtin.copy:
       src: files/test-bucket-policy.json
       dest: "/opt/test-bucket-policy.json"
-      owner: vagrant
-      group: vagrant
       mode: 0644
 
   - name: Minio | Set the mc alias "myminio"
