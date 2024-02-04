@@ -1,0 +1,11 @@
+---
+
+- name: Set minio configs
+  ansible.builtin.lineinfile:
+    path: /etc/default/minio
+    regexp: '^{{ item.key }}='
+    insertafter: "^# {{ item.key }}="
+    line: "{{ item.key }}={{ item.value }}"
+  notify: Minio restart
+
+...

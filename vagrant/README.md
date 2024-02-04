@@ -27,4 +27,11 @@ molecule test --all
 
 ### Test the installation
 
-DESCRIBE, HOW THE INSTALLATION CAN BE TESTED MANUALLY
+Open minio in the browser and access it with the following credentials:
+
+* http://minio.lokal:9001
+
+```
+Username: minioadmin
+Password: minioadmin
+```

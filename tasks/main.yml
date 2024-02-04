@@ -1,7 +1,28 @@
 ---
 
-- name: Fail intentionally
-  ansible.builtin.assert:
-    that: true == false
+- name: APT | Install dependencies
+  ansible.builtin.apt:
+    name: "{{ packages }}"
+    state: present
+    dpkg_options: 'force-confnew,force-confdef'
+    autoclean: true
+    autoremove: true
+    update_cache: true
+    cache_valid_time: 3600
+  vars:
+    packages:
+    # List extracted from https://github.com/odoo/odoo/blob/17.0/debian/control
+    - curl
+
+- name: Install minio from binary
+  ansible.builtin.include_tasks: binary.yml
+
+- name: Set minio volumes
+  ansible.builtin.include_tasks: volumes.yml
+  loop: "{{ minio_volumes }}"
+
+- name: Set minio configs
+  ansible.builtin.include_tasks: config.yml
+  loop: "{{ minio_config }}"
 
 ...

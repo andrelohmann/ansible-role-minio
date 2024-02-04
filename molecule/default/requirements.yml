@@ -1,6 +1,7 @@
 ---
 
-roles: []
+roles:
+- andrelohmann.minio_cli
 
 collections: []
 

@@ -12,9 +12,18 @@ This role requires ubuntu
 
 ### Role Variables
 
-__EXPLAIN_ALL_VARIABLES__
+You can create the desired minio volumes and set all minio config values by setting them as key/value pairs on the minio_config list.
 
-    role_config: []
+    minio_volumes:
+    - /opt/minio
+
+    minio_config:
+    - key: MINIO_VOLUMES
+      value: '"/opt/minio"'
+    - key: MINIO_ROOT_USER
+      value: minioadmin
+    - key: MINIO_ROOT_PASSWORD
+      value: minioadmin
 
 ### Example Playbook
 

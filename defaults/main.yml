@@ -1,6 +1,19 @@
 ---
 
-# Default Variables
-role_config: []
+minio_volumes:
+- /opt/minio
+
+minio_deb_architecture: {
+  "aarch64": "arm64",
+  "x86_64": "amd64"
+}
+
+minio_config:
+- key: MINIO_VOLUMES
+  value: '"/opt/minio"'
+- key: MINIO_ROOT_USER
+  value: minioadmin
+- key: MINIO_ROOT_PASSWORD
+  value: minioadmin
 
 ...
