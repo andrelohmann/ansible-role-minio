@@ -1,7 +1,7 @@
 ---
 
 roles:
-- andrelohmann.minio_cli
+- name: andrelohmann.minio_cli
 
 collections: []
 
