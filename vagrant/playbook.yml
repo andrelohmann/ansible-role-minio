@@ -25,11 +25,11 @@
 
   pre_tasks:
   - name: check for file custom_vars.yml
-    stat:
+    ansible.builtin.stat:
       path: custom_vars.yml
     register: stat_custom_vars
   - name: load custom vars, if existent
-    include_vars:
+    ansible.builtin.include_vars:
       file: custom_vars.yml
     when: stat_custom_vars.stat.exists
 
