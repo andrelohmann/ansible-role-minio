@@ -12,7 +12,7 @@
     minio_test_secretkey: NUf8Ucvs0A84m8Ml8P4ypvMdGYigStjtJdmHeSqL
 
   roles:
-  - name: andrelohmann.minio_cli
+  - role: andrelohmann.minio_cli
 
   tasks:
 
